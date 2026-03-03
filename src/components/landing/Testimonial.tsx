@@ -31,11 +31,11 @@ const Testimonial = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.4em] text-accent">
+          <p className="mb-6 text-[20px] font-medium uppercase tracking-[0.4em] text-accent">
             From Doctors
           </p>
           <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-foreground">
-            Trusted by leading medical professionals
+            What Medical professionals say...
           </h2>
         </motion.div>
 

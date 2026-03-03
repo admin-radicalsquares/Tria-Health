@@ -1,25 +1,112 @@
-import { motion, useScroll, useTransform, useMotionValue, animate, useInView } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  animate,
+  useInView,
+} from "framer-motion";
 import { useRef, useEffect } from "react";
 import trafficImg from "@/assets/ambulance-traffic-real.png";
 
 const stats = [
-  { value: 59, suffix: " min", prefix: "", label: "Average care start time in urban emergencies", isDestructive: true },
-  { value: 80000, suffix: "", prefix: "1 : ", label: "Ambulance density, grossly inadequate", isDestructive: false },
-  { value: 50, suffix: "%", prefix: "30–", label: "Deaths due to delayed first response", isDestructive: true },
+  // National scale crisis
+  {
+    value: 180000,
+    suffix: "",
+    prefix: "~",
+    label: "Annual road fatalities alone in India",
+    isDestructive: true,
+  },
+  {
+    value: 40,
+    suffix: " Lakh+",
+    prefix: "",
+    label: "Serious accidents yearly",
+    isDestructive: true,
+  },
+  {
+    value: 15,
+    suffix: "%",
+    prefix: "Only ~",
+    label: "Victims receive critical care in less than 1 hour",
+    isDestructive: true,
+  },
+  {
+    value: 11,
+    suffix: "%",
+    prefix: "~",
+    label: "Of global emergency deaths occur in India (~195 countries)",
+    isDestructive: true,
+  },
+  // Existing crisis stats
+  {
+    value: 59,
+    suffix: " min",
+    prefix: "",
+    label: "Average care start time in urban emergencies",
+    isDestructive: true,
+  },
+  {
+    value: 80000,
+    suffix: "",
+    prefix: "1 : ",
+    label: "Ambulance density, grossly inadequate",
+    isDestructive: false,
+  },
+  {
+    value: 50,
+    suffix: "%",
+    prefix: "30–",
+    label: "Deaths due to delayed first response",
+    isDestructive: true,
+  },
 ];
 
-function AnimatedStat({ value, suffix, prefix, label, index, isDestructive }: { value: number; suffix: string; prefix?: string; label: string; index: number; isDestructive?: boolean }) {
+const additionalMetrics = [
+  {
+    highlight: "90%",
+    text: " of ambulances operate without equipment/oxygen",
+  },
+  {
+    highlight: "95%",
+    text: " of ambulances have untrained or unskilled personnel",
+  },
+  {
+    highlight: "98.5%",
+    text: " of ambulances exist only to carry dead bodies",
+  },
+];
+
+function AnimatedStat({
+  value,
+  suffix,
+  prefix,
+  label,
+  index,
+}: {
+  value: number;
+  suffix: string;
+  prefix?: string;
+  label: string;
+  index: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
   const count = useMotionValue(0);
   const display = useTransform(count, (v) => {
-    if (value >= 1000) return `${prefix || ""}${Math.round(v).toLocaleString("en-IN")}${suffix}`;
+    if (value >= 1000)
+      return `${prefix || ""}${Math.round(v).toLocaleString("en-IN")}${suffix}`;
     return `${prefix || ""}${Math.round(v)}${suffix}`;
   });
 
   useEffect(() => {
     if (isInView) {
-      animate(count, value, { duration: 2.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] });
+      animate(count, value, {
+        duration: 2.5,
+        delay: 0.2,
+        ease: [0.16, 1, 0.3, 1],
+      });
     }
   }, [isInView, count, value]);
 
@@ -30,18 +117,28 @@ function AnimatedStat({ value, suffix, prefix, label, index, isDestructive }: { 
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ delay: index * 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        delay: index * 0.15,
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
-      <motion.span className={`block text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.03em] ${isDestructive ? 'text-destructive' : 'text-accent'}`}>
+      <motion.span className="block text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.03em] text-destructive">
         <motion.span>{display}</motion.span>
       </motion.span>
-      <span className="mt-2 block text-base text-foreground/60 leading-relaxed">{label}</span>
+      <span className="mt-2 block text-base text-foreground/60 leading-relaxed">
+        {label}
+      </span>
       <motion.div
-        className={`mt-6 h-[1px] ${isDestructive ? 'bg-destructive/15' : 'bg-accent/15'}`}
+        className="mt-6 h-[1px] bg-destructive/25"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ delay: index * 0.15 + 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{
+          delay: index * 0.15 + 0.3,
+          duration: 0.8,
+          ease: [0.16, 1, 0.3, 1],
+        }}
         style={{ transformOrigin: "left" }}
       />
     </motion.div>
@@ -59,10 +156,14 @@ const Problem = () => {
   const imageScale = useTransform(scrollYProgress, [0, 0.4], [1.1, 1]);
 
   return (
-    <section ref={sectionRef} id="problem" className="relative bg-background overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="problem"
+      className="relative bg-background overflow-hidden"
+    >
       {/* Top gradient blend from previous section */}
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent z-20 pointer-events-none" />
-        <div className="relative z-10 mx-auto max-w-[1440px] px-10 py-20 md:py-28">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-10 py-20 md:py-28">
         {/* Header */}
         <motion.div
           className="mb-20"
@@ -71,7 +172,7 @@ const Problem = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.4em] text-accent">
+          <p className="mb-4 text-[27px] font-medium uppercase tracking-[0.45em] text-accent">
             The Crisis
           </p>
           <h2 className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-bold leading-[1.05] tracking-[-0.04em] text-foreground">
@@ -84,7 +185,7 @@ const Problem = () => {
         {/* Side-by-side: stats left, image right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           {/* Stats */}
-          <div className="space-y-8">
+          <div className="grid gap-10 md:grid-cols-2">
             {stats.map((stat, i) => (
               <AnimatedStat
                 key={stat.label}
@@ -93,9 +194,37 @@ const Problem = () => {
                 prefix={stat.prefix}
                 label={stat.label}
                 index={i}
-                isDestructive={stat.isDestructive}
               />
             ))}
+
+            {/* Additional metrics hover text centered in bottom space */}
+            <div className="relative md:col-span-2 mt-12 flex justify-center">
+              <div className="group inline-flex items-center gap-3 text-[11px] md:text-[12px] font-normal uppercase tracking-[0.35em] text-destructive cursor-pointer">
+                <span>Additional metrics</span>
+                <span className="text-[10px] md:text-[11px] text-destructive/70 group-hover:translate-x-1 transition-transform">
+                  (hover to view)
+                </span>
+
+                <div className="pointer-events-none absolute bottom-full left-1/2 mb-4 w-[min(380px,90vw)] -translate-x-1/2 rounded-lg border border-destructive/40 bg-background/95 px-5 py-4 shadow-xl shadow-destructive/40 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 ease-out z-20">
+                  <ul className="space-y-1.5 text-xs md:text-sm text-foreground/70 leading-relaxed">
+                    {additionalMetrics.map((item) => (
+                      <li
+                        key={item.highlight + item.text}
+                        className="flex gap-2"
+                      >
+                        <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-destructive/70 flex-shrink-0" />
+                        <span>
+                          <span className="text-destructive">
+                            {item.highlight}
+                          </span>
+                          {item.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Image */}
@@ -106,7 +235,10 @@ const Problem = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <motion.div className="absolute inset-0" style={{ y: imageY, scale: imageScale }}>
+            <motion.div
+              className="absolute inset-0"
+              style={{ y: imageY, scale: imageScale }}
+            >
               <img
                 src={trafficImg}
                 alt="Traffic congestion delaying emergency response"

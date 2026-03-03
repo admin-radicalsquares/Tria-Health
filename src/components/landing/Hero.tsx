@@ -19,7 +19,7 @@ const Hero = () => {
           alt="City skyline during golden hour"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/0 to-background/90" />
       </motion.div>
 
       {/* Floating particles */}
@@ -29,7 +29,12 @@ const Hero = () => {
           className="absolute h-1 w-1 rounded-full bg-accent/30"
           style={{ left: `${20 + i * 15}%`, top: `${30 + i * 10}%` }}
           animate={{ y: [0, -30, 0], opacity: [0.2, 0.6, 0.2] }}
-          transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+          transition={{
+            duration: 3 + i * 0.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.3,
+          }}
         />
       ))}
 
@@ -40,24 +45,28 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.3, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight text-accent">TRIA</span>
-          <span className="text-[clamp(2rem,4vw,3rem)] font-light tracking-tight text-foreground/60">Health</span>
+          <span className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight text-accent">
+            TRIA
+          </span>
+          <span className="text-[clamp(2rem,4vw,3rem)] font-light tracking-tight text-foreground/60">
+            Health
+          </span>
         </motion.div>
 
         <motion.div
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#ffc15a]/90 bg-background/25 backdrop-blur-sm px-4 py-1.5 shadow-[0_0_26px_rgba(255,193,90,0.85)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-          <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-accent">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#ffc15a] animate-pulse shadow-[0_0_24px_rgba(255,193,90,1)]" />
+          <span className="text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.35em] text-[#ffc15a]">
             Stealth Mode
           </span>
         </motion.div>
 
         <motion.p
-          className="mb-8 text-[11px] font-medium uppercase tracking-[0.4em] text-muted-foreground"
+          className="mb-8 text-[11px] font-medium uppercase tracking-[0.4em] text-foreground"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -89,8 +98,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          Converting the Golden Hour into Golden Minutes through
-          AI-powered rapid emergency response.
+          Converting the Golden Hour into Golden Minutes through AI-powered
+          rapid emergency response.
         </motion.p>
 
         <motion.a

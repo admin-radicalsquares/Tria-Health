@@ -101,7 +101,7 @@ const MediaReel = () => {
       <div className="relative z-10 flex flex-col items-center px-8">
         {/* Label */}
         <motion.p
-          className="mb-10 text-[11px] font-medium uppercase tracking-[0.4em] text-destructive/60"
+          className="mb-10 text-[13px] md:text-[14px] font-medium uppercase tracking-[0.4em] text-destructive drop-shadow-[0_0_12px_rgba(248,113,113,0.9)]"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 1 }}
@@ -229,7 +229,7 @@ const MediaReel = () => {
           transition={{ delay: 0.4, duration: 1.2 }}
         >
           <p className="text-[22px] leading-relaxed text-foreground font-semibold">
-            Your mother. Your father. Your brother. Your sister.
+            It's Fathers, Mothers, Brothers, Sisters, Sons, Daughters.
           </p>
           <motion.p
             className="mt-3 text-[19px] font-bold text-destructive"

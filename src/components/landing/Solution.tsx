@@ -13,7 +13,7 @@ const Solution = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.4em] text-accent">
+          <p className="mb-6 text-[27px] font-medium uppercase tracking-[0.4em] text-accent">
             The Solution
           </p>
 

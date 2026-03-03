@@ -1,23 +1,75 @@
-import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useInView,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
-import { AlertTriangle, Heart, Siren, Clock, Ambulance, Globe } from "lucide-react";
+import {
+  AlertTriangle,
+  Heart,
+  Siren,
+  Clock,
+  Ambulance,
+  Globe,
+} from "lucide-react";
 import andhraPradesh from "@/assets/andhra-pradesh.jpg";
 import medicalKit from "@/assets/medical-kit.jpg";
 
 const metrics = [
-  { number: 180000, suffix: "", prefix: "~", description: "Annual road fatalities in India", icon: AlertTriangle },
-  { number: 40, suffix: " Lakh+", prefix: "", description: "Serious accidents yearly", icon: Siren },
-  { number: 80000, suffix: "", prefix: "1 : ", description: "Ambulance per citizens, grossly inadequate", icon: Ambulance },
-  { number: 15, suffix: "%", prefix: "Only ~", description: "Victims receive critical care in less than 1 hour", icon: Clock },
-  { number: 11, suffix: "%", prefix: "~", description: "Of global emergency deaths occur in India (~195 countries)", icon: Globe },
+  {
+    number: 200000,
+    suffix: "",
+    prefix: "~",
+    description: "lives saved annually (Mortality reduction)",
+    icon: Heart,
+  },
+  {
+    number: 40,
+    suffix: "%",
+    prefix: "30 – ",
+    description: "coverage & emergency response efficiency gain",
+    icon: Siren,
+  },
+  {
+    number: 50000,
+    suffix: "+",
+    prefix: "",
+    description: "Disability & workforce preservation cases annually",
+    icon: Ambulance,
+  },
+  {
+    number: 5,
+    suffix: "% of GDP annually",
+    prefix: "~3–",
+    description: "National economic impact",
+    icon: Globe,
+  },
+  {
+    number: 21,
+    suffix: " – Right to life",
+    prefix: "Article ",
+    description: "Support SC ruling of constitution right",
+    icon: Siren,
+  },
 ];
 
-function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix: string; suffix: string }) {
+function AnimatedCounter({
+  value,
+  prefix,
+  suffix,
+}: {
+  value: number;
+  prefix: string;
+  suffix: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const count = useMotionValue(0);
   const rounded = useTransform(count, (v) => {
-    if (value >= 1000) return `${prefix}${Math.round(v).toLocaleString("en-IN")}${suffix}`;
+    if (value >= 1000)
+      return `${prefix}${Math.round(v).toLocaleString("en-IN")}${suffix}`;
     return `${prefix}${Math.round(v)}${suffix}`;
   });
 
@@ -32,9 +84,12 @@ function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix: str
 
 const ImpactMetrics = () => {
   return (
-    <section id="impact" className="relative bg-background py-20 md:py-28 overflow-hidden">
+    <section
+      id="impact"
+      className="relative bg-background py-20 md:py-28 overflow-hidden"
+    >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-accent/[0.03] blur-[120px] pointer-events-none" />
-      
+
       <div className="relative mx-auto max-w-[1440px] px-10">
         {/* Paradigm Shift */}
         <motion.div
@@ -43,7 +98,7 @@ const ImpactMetrics = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.4em] text-muted-foreground">
+          <p className="mb-6 text-[24px] font-medium uppercase tracking-[0.4em] text-muted-foreground">
             Paradigm Shift
           </p>
           <h3 className="text-[clamp(1.8rem,3.5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground mb-16">
@@ -68,20 +123,31 @@ const ImpactMetrics = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                 <div className="absolute top-5 left-5">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-background/70 backdrop-blur-md px-4 py-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                    <span className="h-2 w-2 rounded-full bg-muted-foreground/50" />
+                  <span className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2 text-[12px] md:text-[13px] font-medium uppercase tracking-[0.35em] text-background shadow-lg shadow-foreground/40">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-background/60" />
+                      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-background" />
+                    </span>
                     Current
                   </span>
                 </div>
                 <div className="absolute bottom-5 right-5">
-                  <span className="text-[4rem] font-bold tracking-[-0.04em] text-foreground/20 leading-none">59m</span>
+                  <span className="text-[4rem] font-bold tracking-[-0.04em] text-foreground/20 leading-none">
+                    59m
+                  </span>
                 </div>
               </div>
               <div className="p-10">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground/50 mb-4">Current Model</p>
+                <p className="text-sm md:text-base font-medium uppercase tracking-[0.35em] text-muted-foreground/80 mb-3">
+                  Current Model
+                </p>
                 <div className="flex items-baseline gap-3 mb-4">
-                  <span className="text-[3.5rem] font-bold tracking-[-0.04em] text-foreground leading-none">59</span>
-                  <span className="text-lg font-light text-muted-foreground">min avg.</span>
+                  <span className="text-[3.5rem] font-bold tracking-[-0.04em] text-foreground leading-none">
+                    59
+                  </span>
+                  <span className="text-lg font-light text-muted-foreground">
+                    min avg.
+                  </span>
                 </div>
                 <ul className="text-base text-muted-foreground leading-relaxed mb-8 space-y-2.5">
                   <li>60+ minute average EMS response time</li>
@@ -94,10 +160,16 @@ const ImpactMetrics = () => {
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     viewport={{ once: true }}
-                    transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{
+                      duration: 2,
+                      delay: 0.3,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
                   />
                 </div>
-                <span className="mt-3 block text-[11px] text-muted-foreground/40">Response timeline</span>
+                <span className="mt-3 block text-[11px] text-muted-foreground/40">
+                  Response timeline
+                </span>
               </div>
             </motion.div>
 
@@ -117,23 +189,31 @@ const ImpactMetrics = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                 <div className="absolute top-5 left-5">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-accent/20 backdrop-blur-md px-4 py-1.5 text-[11px] font-medium uppercase tracking-wider text-accent">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                  <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-[12px] md:text-[13px] font-medium uppercase tracking-[0.35em] text-background shadow-lg shadow-accent/40">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-background/60" />
+                      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-background" />
                     </span>
                     TRIA
                   </span>
                 </div>
                 <div className="absolute bottom-5 right-5">
-                  <span className="text-[4rem] font-bold tracking-[-0.04em] text-accent/20 leading-none">5m</span>
+                  <span className="text-[4rem] font-bold tracking-[-0.04em] text-accent/20 leading-none">
+                    5m
+                  </span>
                 </div>
               </div>
               <div className="p-10">
-                <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-accent/50 mb-4">TRIA Model</p>
+                <p className="text-sm md:text-base font-medium uppercase tracking-[0.35em] text-accent/80 mb-3">
+                  TRIA Model
+                </p>
                 <div className="flex items-baseline gap-3 mb-4">
-                  <span className="text-[3.5rem] font-bold tracking-[-0.04em] text-accent leading-none">5</span>
-                  <span className="text-lg font-light text-muted-foreground">min avg.</span>
+                  <span className="text-[3.5rem] font-bold tracking-[-0.04em] text-accent leading-none">
+                    5
+                  </span>
+                  <span className="text-lg font-light text-muted-foreground">
+                    min avg.
+                  </span>
                   <motion.span
                     className="ml-3 inline-flex items-center rounded-full bg-destructive/15 border border-destructive/25 px-4 py-1.5 text-[12px] font-bold text-destructive tracking-wide"
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -155,10 +235,16 @@ const ImpactMetrics = () => {
                     initial={{ width: 0 }}
                     whileInView={{ width: "8.5%" }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.3,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
                   />
                 </div>
-                <span className="mt-3 block text-[11px] text-accent/40">Response timeline</span>
+                <span className="mt-3 block text-[11px] text-accent/40">
+                  Response timeline
+                </span>
               </div>
             </motion.div>
           </div>
@@ -172,14 +258,15 @@ const ImpactMetrics = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.4em] text-accent">
-            The Scale
+          <p className="mb-6 text-[27px] font-medium uppercase tracking-[0.4em] text-accent">
+            The Impact
           </p>
           <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
             Impact at national scale.
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground max-w-xl">
-            Starting with India and expanding to create a global impact across nations with challenging infrastructure and capital constraints.
+            Starting with India and expanding to create a global impact across
+            nations with challenging infrastructure and capital constraints.
           </p>
         </motion.div>
 
@@ -194,13 +281,21 @@ const ImpactMetrics = () => {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  delay: i * 0.1,
+                  duration: 0.7,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
                 <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-md border border-accent/20 bg-accent/5">
                   <Icon className="h-4 w-4 text-accent/70" strokeWidth={1.5} />
                 </div>
                 <span className="block text-[2rem] font-bold tracking-[-0.04em] leading-tight text-accent">
-                  <AnimatedCounter value={metric.number} prefix={metric.prefix} suffix={metric.suffix} />
+                  <AnimatedCounter
+                    value={metric.number}
+                    prefix={metric.prefix}
+                    suffix={metric.suffix}
+                  />
                 </span>
                 <span className="mt-2 block text-[13px] leading-relaxed text-muted-foreground">
                   {metric.description}

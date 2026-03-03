@@ -37,7 +37,7 @@ const SystemShift = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-destructive/70">
+              <p className="inline-flex items-center rounded-full bg-destructive px-6 py-2 text-xs md:text-lg font-medium uppercase tracking-[0.35em] text-background shadow-xl shadow-destructive/50">
                 Current Model
               </p>
               <h3 className="mt-3 text-[clamp(1.5rem,3vw,2.2rem)] font-semibold tracking-[-0.03em] text-foreground">
@@ -64,7 +64,7 @@ const SystemShift = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-accent/70">
+              <p className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-xs md:text-lg font-medium uppercase tracking-[0.35em] text-background shadow-xl shadow-accent/50">
                 TRIA Model
               </p>
               <h3 className="mt-3 text-[clamp(1.5rem,3vw,2.2rem)] font-semibold tracking-[-0.03em] text-accent">

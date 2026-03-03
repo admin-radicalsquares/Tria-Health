@@ -30,9 +30,12 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-10 py-5">
-        <a href="#" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-accent">TRIA</span>
-          <span className="text-xl font-light tracking-tight text-foreground/60">Health</span>
+        <a href="#" className="flex items-center gap-3">
+          <span className="text-2xl font-bold tracking-tight text-accent">TRIA</span>
+          <span className="text-2xl font-light tracking-tight text-foreground">Health</span>
+          <span className="hidden sm:inline text-[12px] md:text-[13px] font-medium tracking-[0.18em] text-foreground/70">
+            (Tria – Sanskrit: to rescue, to save)
+          </span>
         </a>
 
         <div className="hidden items-center gap-10 md:flex">
