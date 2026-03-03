@@ -237,7 +237,7 @@ const MediaReel = () => {
             animate={flatlined ? { opacity: 1 } : {}}
             transition={{ delay: 1.2, duration: 1 }}
           >
-            This isn't a statistic. It's someone's family. Every single day.
+            This isn't a metric. It's someone's family. Every single day.
           </motion.p>
         </motion.div>
       </div>
