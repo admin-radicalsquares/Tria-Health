@@ -4,23 +4,38 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
+      "In the past and present, the most ignored care is pre-hospital management. Right person, at the right place, and at the right time. The golden hour of resuscitation is actually the pre-hospital care, which indeed decreases the severity (mortality and morbidity). A nation with strong pre-hospital care will be a nation with less mortality and morbidity.",
+    name: "Dr. Ratna Kumar Natta",
+    credentials: "MBBS, MD Emergency Medicine, DrNB Critical Care Medicine",
+    role: "HOD & Emergency Department Intensivist",
+    hospital: "AIG Hospitals, Hyderabad",
+  },
+
+  {
+    quote:
       "Pre-Hospital Care makes huge impact over patient outcomes exponentially in India",
     name: "Dr. Kiran Kumar Verma",
     credentials: "MBBS, MD, MEM, DEM (UK), FICM",
-    role: "Associate Clinical Director, HOD & Sr. Consultant, Emergency Medicine - Care Hospital, Hyderabad",
+    role: "Associate Clinical Director, HOD & Sr. Consultant, Emergency Medicine",
+    hospital: "Care Hospital, Hyderabad",
   },
   {
     quote:
       "Emergency care is the essential right of every citizen which includes prehospital stabilisation and adequate resuscitation in emergency rooms before transferring to definitive care. Fragmented care disrupts the ecosystem and the most sophisticated intensive care units become preterminal wards if prehospital care & emergency care fails.",
     name: "Dr. Shree Sowjanya Patibandla",
     credentials: "MD (EM), MBA",
-    role: "Chief Emergency Physician, National President - Society for Emergency Medicine India (SEMI). HOD Emergency Medicine, Apollo Hospitals Hyderabad. Innovator in Patient Centered Care",
+    role: "Chief Emergency Physician, HOD Emergency Medicine",
+    hospital:
+      "Apollo Hospitals, Hyderabad\nNational President - Society for Emergency Medicine India (SEMI)",
   },
 ];
 
 const Testimonial = () => {
   return (
-    <section id="from-doctors" className="relative bg-background py-20 md:py-28 overflow-hidden">
+    <section
+      id="from-doctors"
+      className="relative bg-background py-20 md:py-28 overflow-hidden"
+    >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/[0.02] blur-[100px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1440px] px-10">
@@ -46,29 +61,37 @@ const Testimonial = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 hover:border-accent/30 transition-colors duration-300"
+              transition={{
+                duration: 0.6,
+                delay: i * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="group flex flex-col rounded-2xl border-2 border-accent bg-card/80 backdrop-blur-sm p-6 shadow-[0_0_24px_hsl(var(--accent)/0.4)]"
             >
-              <Quote className="mb-4 h-6 w-6 text-accent/40 shrink-0" strokeWidth={1.5} />
-
-              {/* Scrollable quote area */}
-              <div className="flex-1 max-h-[160px] overflow-y-auto pr-1 custom-scrollbar">
-                <blockquote className="text-[15px] leading-[1.6] text-foreground/80 font-medium">
-                  "{t.quote}"
-                </blockquote>
-              </div>
-
-              {/* Author info pinned to bottom */}
-              <div className="mt-5 pt-4 border-t border-border/40 space-y-1">
+              {/* Author info at top - min-h aligns separator across all cards */}
+              <div className="mb-2 flex min-h-[120px] flex-col justify-start border-b-2 border-accent/90 pb-3 space-y-1">
                 <p className="text-sm font-semibold text-foreground tracking-tight">
                   {t.name}
                 </p>
-                <p className="text-xs text-accent font-medium">
+                <p className="text-xs text-muted-foreground font-medium">
                   {t.credentials}
                 </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-xs text-accent font-medium leading-relaxed whitespace-pre-line">
                   {t.role}
                 </p>
+                <p className="text-xs text-foreground leading-relaxed whitespace-pre-line">
+                  {t.hospital}
+                </p>
+              </div>
+
+              {/* Scrollable quote area */}
+              <div className="flex-1 max-h-[160px] overflow-y-auto pr-1 custom-scrollbar">
+                <div className="flex gap-3">
+                  <Quote className="mt-1 h-5 w-5 text-accent/70 shrink-0" strokeWidth={1.5} />
+                  <blockquote className="text-[15px] leading-[1.6] text-foreground/80 font-medium">
+                    "{t.quote}"
+                  </blockquote>
+                </div>
               </div>
             </motion.div>
           ))}
