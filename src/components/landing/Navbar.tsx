@@ -54,7 +54,7 @@ const Navbar = () => {
           href="#contact"
           className="rounded-full bg-accent px-6 py-2.5 text-[13px] font-medium text-accent-foreground transition-all duration-300 hover:bg-accent/85"
         >
-          Request Pilot Proposal
+          Connect With Us
         </a>
       </div>
     </motion.nav>

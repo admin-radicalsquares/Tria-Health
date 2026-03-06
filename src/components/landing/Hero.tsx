@@ -111,7 +111,7 @@ const Hero = () => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
         >
-          Request Pilot Proposal
+          Connect With Us
           <motion.span
             className="inline-block"
             animate={{ x: [0, 4, 0] }}

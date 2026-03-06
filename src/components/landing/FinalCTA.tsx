@@ -39,7 +39,7 @@ const FinalCTA = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            Request Proposal Meeting
+            Connect With Us
           </motion.a>
           <motion.a
             href="#"
@@ -47,7 +47,7 @@ const FinalCTA = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            Download Overview
+            Partnership engagement
           </motion.a>
         </div>
       </motion.div>

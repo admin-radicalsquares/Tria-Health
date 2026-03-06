@@ -9,7 +9,7 @@ const Footer = () => {
           </a>
 
           <div className="flex gap-8 text-[12px] text-muted-foreground">
-            <span>rajesh@triahealth.in</span>
+            <span>info@triahealth.in</span>
             <span>+91-630-412-1437</span>
           </div>
         </div>

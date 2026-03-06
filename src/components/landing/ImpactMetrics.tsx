@@ -154,11 +154,11 @@ const ImpactMetrics = () => {
                   <li>Ambulances stuck in traffic gridlock</li>
                   <li>High mortality and disability rates</li>
                 </ul>
-                <div className="h-2 bg-border/20 rounded-full overflow-hidden">
+                <div className="h-2.5 bg-muted-foreground/25 ring-1 ring-muted-foreground/20 rounded-full overflow-hidden">
                   <motion.div
-                    className="h-full bg-muted-foreground/25 rounded-full"
+                    className="h-full bg-foreground/90 rounded-full"
                     initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
+                    whileInView={{ width: "90%" }}
                     viewport={{ once: true }}
                     transition={{
                       duration: 2,
@@ -167,7 +167,7 @@ const ImpactMetrics = () => {
                     }}
                   />
                 </div>
-                <span className="mt-3 block text-[11px] text-muted-foreground/40">
+                <span className="mt-3 block text-[11px] font-medium text-muted-foreground/80">
                   Response timeline
                 </span>
               </div>
@@ -229,11 +229,11 @@ const ImpactMetrics = () => {
                   <li>Tech & network powered, bypasses traffic</li>
                   <li>High survival rate, reduce deaths by 80%</li>
                 </ul>
-                <div className="h-2 bg-border/20 rounded-full overflow-hidden">
+                <div className="h-2.5 bg-muted-foreground/25 ring-1 ring-muted-foreground/20 rounded-full overflow-hidden">
                   <motion.div
                     className="h-full bg-accent rounded-full"
                     initial={{ width: 0 }}
-                    whileInView={{ width: "8.5%" }}
+                    whileInView={{ width: "13.5%" }}
                     viewport={{ once: true }}
                     transition={{
                       duration: 1,
@@ -242,7 +242,7 @@ const ImpactMetrics = () => {
                     }}
                   />
                 </div>
-                <span className="mt-3 block text-[11px] text-accent/40">
+                <span className="mt-3 block text-[11px] font-medium text-accent/80">
                   Response timeline
                 </span>
               </div>

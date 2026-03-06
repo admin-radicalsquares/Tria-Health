@@ -13,7 +13,7 @@ A cinematic, tech-savvy landing page combining the restrained elegance of Neural
 ## Sections
 
 ### 1. Sticky Nav
-- TRIA Health logo (left), nav links (center: Solution · Impact · Technology · About), CTA button "Request Pilot Proposal" (right, teal accent)
+- TRIA Health logo (left), nav links (center: Solution · Impact · Technology · About), CTA button "Connect With Us" (right, teal accent)
 - Transparent over hero → solid charcoal on scroll
 
 ### 2. Hero — Full Viewport Video
@@ -21,7 +21,7 @@ A cinematic, tech-savvy landing page combining the restrained elegance of Neural
 - Micro label: `EMERGENCY RESPONSE INFRASTRUCTURE`
 - Headline: **THE FIVE-MINUTE LIFELINE**
 - Subtext: "Converting the Golden Hour into Golden Minutes through AI-powered rapid emergency response."
-- Centered CTA: "Request Pilot Proposal" (teal button)
+- Centered CTA: "Connect With Us" (teal button)
 - Subtle scroll indicator arrow at bottom
 
 ### 3. Wide Media Reel
@@ -89,7 +89,7 @@ A cinematic, tech-savvy landing page combining the restrained elegance of Neural
 ### 12. Final CTA
 - Full-width background image placeholder (sunrise cityscape)
 - Headline: "Partner with TRIA to launch rapid response infrastructure."
-- Two buttons: "Request Proposal Meeting" (teal) + "Download Infrastructure Overview" (outline)
+- Two buttons: "Connect With Us" (teal) + "Download Infrastructure Overview" (outline)
 
 ### 13. Footer
 - TRIA Health branding, contact email/phone, copyright
