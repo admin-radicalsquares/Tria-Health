@@ -42,7 +42,7 @@ const metrics = [
   {
     number: 5,
     suffix: "% of GDP annually",
-    prefix: "~3–",
+    prefix: "~3 – ",
     description: "National economic impact",
     icon: Globe,
   },
@@ -259,10 +259,10 @@ const ImpactMetrics = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="mb-6 text-[27px] font-medium uppercase tracking-[0.4em] text-accent">
-           Potential Impact
+           The Impact
           </p>
           <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
-            Impact at national scale.
+            Potential Impact at national scale.
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground max-w-xl">
             Starting with India and expanding to create a global impact across
