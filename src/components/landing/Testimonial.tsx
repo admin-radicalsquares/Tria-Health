@@ -50,7 +50,7 @@ const Testimonial = () => {
             From Doctors
           </p>
           <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-foreground">
-            What Medical professionals say...
+            What experts say...
           </h2>
         </motion.div>
 
