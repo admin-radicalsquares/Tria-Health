@@ -14,7 +14,7 @@ import {
   Ambulance,
   Globe,
 } from "lucide-react";
-import andhraPradesh from "@/assets/andhra-pradesh.jpg";
+import andhraPradesh from "@/assets/andhra-pradesh-clean-v3.jpg";
 import medicalKit from "@/assets/medical-kit.jpg";
 
 const metrics = [
