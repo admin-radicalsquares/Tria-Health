@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "In the past and present, the most ignored care is pre-hospital management. Right person, at the right place, and at the right time. The golden hour of resuscitation is actually the pre-hospital care, which indeed decreases the severity (mortality and morbidity). A nation with strong pre-hospital care will be a nation with less mortality and morbidity.",
+      "In the past and present, the most ignored care is pre-hospital management. Right person, at the right place, and at the right time. The golden hour of resuscitation is actually the pre-hospital care, which indeed decreases the severity (mortality and morbidity). A nation with strong pre-hospital care will be a nation with lower mortality and morbidity rates.",
     name: "Dr. Ratna Kumar Natta",
     credentials: "MBBS, MD Emergency Medicine, DrNB Critical Care Medicine",
     role: "HOD & Emergency Department Intensivist",
