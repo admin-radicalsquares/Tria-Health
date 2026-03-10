@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { label: "Problem", href: "#problem" },
@@ -50,12 +52,58 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="rounded-full bg-accent px-6 py-2.5 text-[13px] font-medium text-accent-foreground transition-all duration-300 hover:bg-accent/85"
-        >
-          Connect With Us
-        </a>
+        <Dialog>
+          <DialogTrigger asChild>
+            <button
+              type="button"
+              className="rounded-full bg-accent px-6 py-2.5 text-[13px] font-medium text-accent-foreground transition-all duration-300 hover:bg-accent/85"
+              onClick={() =>
+                trackEvent("cta_click", {
+                  cta_label: "Connect With Us",
+                  section: "navbar",
+                })
+              }
+            >
+              Connect With Us
+            </button>
+          </DialogTrigger>
+          <DialogContent className="max-w-xl sm:max-w-2xl p-8">
+            <DialogHeader>
+              <DialogTitle className="text-xl sm:text-2xl">Connect With Us</DialogTitle>
+            </DialogHeader>
+            <div className="mt-4 space-y-4 text-left text-base sm:text-lg">
+              <div>
+                <span className="font-medium text-muted-foreground">Email: </span>
+                <a
+                  href="mailto:info@triahealth.in"
+                  className="font-semibold text-accent hover:underline"
+                >
+                  info@triahealth.in
+                </a>
+              </div>
+              <div>
+                <span className="font-medium text-muted-foreground">Phone No: </span>
+                <a
+                  href="tel:+916304121437"
+                  className="font-semibold text-accent hover:underline"
+                >
+                  +91-630-412-1437
+                </a>
+              </div>
+              <div>
+                <span className="font-medium text-muted-foreground">Website: </span>
+                <a
+                  href="https://triahealth.in"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-accent hover:underline"
+                >
+                  triahealth.in
+                </a>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </motion.nav>
   );
