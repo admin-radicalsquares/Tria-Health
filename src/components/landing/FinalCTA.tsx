@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 import cityscapeImg from "@/assets/cityscape-sunrise.jpg";
 
 const FinalCTA = () => {
@@ -38,6 +39,12 @@ const FinalCTA = () => {
             className="rounded-full bg-accent px-8 py-3.5 text-[14px] font-medium text-accent-foreground transition-all duration-300 hover:bg-accent/85 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)]"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() =>
+              trackEvent("cta_click", {
+                cta_label: "Connect With Us",
+                section: "final_cta",
+              })
+            }
           >
             Connect With Us
           </motion.a>
@@ -46,6 +53,12 @@ const FinalCTA = () => {
             className="rounded-full border border-foreground/20 px-8 py-3.5 text-[14px] font-medium text-foreground transition-all duration-300 hover:border-foreground/40 hover:bg-foreground/5"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() =>
+              trackEvent("cta_click", {
+                cta_label: "Partnership engagement",
+                section: "final_cta",
+              })
+            }
           >
             Partnership engagement
           </motion.a>
