@@ -31,7 +31,7 @@ const FinalCTA = () => {
         <h2 className="mb-10 mx-auto max-w-xl text-balance text-[clamp(1.75rem,3.5vw,3rem)] font-semibold leading-[1.2] tracking-[-0.03em] text-foreground">
           Partner with <span className="text-accent">TRIA</span>.
           <br />
-          <span className="inline-block md:-translate-x-60 md:whitespace-nowrap">
+          <span className="inline-block md:-translate-x-64 md:whitespace-nowrap">
             Join our <span className="text-accent">Exclusive Partners</span> - Driven by{" "}
             <span className="text-accent">Social Impact</span>, above all.
           </span>
@@ -70,7 +70,7 @@ const FinalCTA = () => {
                   </a>
                 </div>
                 <div>
-                  <span className="font-medium text-muted-foreground">Phone No: </span>
+                  <span className="font-medium text-muted-foreground">Phone No / Whatsapp: </span>
                   <a
                     href="tel:+916304121437"
                     className="font-semibold text-accent hover:underline"

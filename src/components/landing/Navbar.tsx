@@ -82,7 +82,7 @@ const Navbar = () => {
                 </a>
               </div>
               <div>
-                <span className="font-medium text-muted-foreground">Phone No: </span>
+                <span className="font-medium text-muted-foreground">Phone No / Whatsapp: </span>
                 <a
                   href="tel:+916304121437"
                   className="font-semibold text-accent hover:underline"
@@ -98,7 +98,7 @@ const Navbar = () => {
                   rel="noreferrer"
                   className="font-semibold text-accent hover:underline"
                 >
-                  triahealth.in
+                  https://triahealth.in
                 </a>
               </div>
             </div>
