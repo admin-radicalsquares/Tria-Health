@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { trackEvent } from "@/lib/analytics";
 import cityscapeImg from "@/assets/cityscape-sunrise.jpg";
 
@@ -31,9 +37,10 @@ const FinalCTA = () => {
         <h2 className="mb-10 mx-auto max-w-xl text-balance text-[clamp(1.75rem,3.5vw,3rem)] font-semibold leading-[1.2] tracking-[-0.03em] text-foreground">
           Partner with <span className="text-accent">TRIA</span>.
           <br />
-          <span className="inline-block md:-translate-x-64 md:whitespace-nowrap">
-            Join our <span className="text-accent">Exclusive Partners</span> - Driven by{" "}
-            <span className="text-accent">Social Impact</span>, above all.
+          <span className="inline-block md:-translate-x-80 md:whitespace-nowrap">
+            Join our <span className="text-accent">Exclusive Partners</span> -
+            Driven by <span className="text-accent">Social Impact</span>, above
+            all.
           </span>
         </h2>
 
@@ -57,11 +64,15 @@ const FinalCTA = () => {
             </DialogTrigger>
             <DialogContent className="max-w-xl sm:max-w-2xl p-8">
               <DialogHeader>
-                <DialogTitle className="text-xl sm:text-2xl">Connect With Us</DialogTitle>
+                <DialogTitle className="text-xl sm:text-2xl">
+                  Connect With Us
+                </DialogTitle>
               </DialogHeader>
               <div className="mt-4 space-y-4 text-left text-base sm:text-lg">
                 <div>
-                  <span className="font-medium text-muted-foreground">Email: </span>
+                  <span className="font-medium text-muted-foreground">
+                    Email:{" "}
+                  </span>
                   <a
                     href="mailto:info@triahealth.in"
                     className="font-semibold text-accent hover:underline"
@@ -70,7 +81,9 @@ const FinalCTA = () => {
                   </a>
                 </div>
                 <div>
-                  <span className="font-medium text-muted-foreground">Phone No / Whatsapp: </span>
+                  <span className="font-medium text-muted-foreground">
+                    Phone No / Whatsapp:{" "}
+                  </span>
                   <a
                     href="tel:+916304121437"
                     className="font-semibold text-accent hover:underline"
@@ -79,7 +92,9 @@ const FinalCTA = () => {
                   </a>
                 </div>
                 <div>
-                  <span className="font-medium text-muted-foreground">Website: </span>
+                  <span className="font-medium text-muted-foreground">
+                    Website:{" "}
+                  </span>
                   <a
                     href="https://triahealth.in"
                     target="_blank"
